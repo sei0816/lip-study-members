@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lip:)Study Members | サービスのご案内</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Noto+Serif+JP:wght@300;400&family=Cormorant:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --ivory:       #FDF8F5;
+  --ivory-deep:  #F7EEE8;
+  --pink-soft:   #F9E8E8;
+  --pink-mist:   #F2D0CC;
+  --pink-accent: #E8A0A0;
+  --pink-deep:   #C26A6A;
+  --gold:        #C4A472;
+  --gold-light:  #DCC090;
+  --ink:         #2C2018;
+  --ink-mid:     #4E3828;
+  --ink-soft:    #7A6050;
+  --line:        rgba(196,164,114,0.22);
+  --line-pink:   rgba(226,160,160,0.3);
+}
+
+body {
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 300;
+  line-height: 2;
+  overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 65% 55% at 72% 28%, rgba(242,208,204,0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 55% at 18% 75%, rgba(249,232,232,0.5) 0%, transparent 55%),
+    var(--ivory);
+  pointer-events: none;
+}
+
+/* 静的な円弧装飾 */
+.arc {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.arc-1 {
+  width: 580px; height: 580px;
+  top: -16%; right: -10%;
+  border: 0.5px solid var(--line-pink);
+}
+.arc-2 {
+  width: 400px; height: 400px;
+  top: 8%; right: 6%;
+  border: 0.5px solid var(--line);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: clamp(6rem, 14vh, 10rem) clamp(2rem, 10vw, 9rem);
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+.hero-eyebrow span {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.42em;
+  color: var(--pink-deep);
+  text-transform: uppercase;
+}
+.eyebrow-line {
+  width: 52px; height: 0.5px;
+  background: linear-gradient(90deg, var(--pink-accent), transparent);
+}
+
+.hero-title {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: clamp(3rem, 9vw, 7rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+.hero-title .smile {
+  color: var(--pink-deep);
+}
+
+.hero-subtitle {
+  font-family: 'Cormorant', serif;
+  font-size: clamp(0.78rem, 1.1vw, 0.88rem);
+  letter-spacing: 0.32em;
+  color: var(--ink-soft);
+  margin-bottom: 3.5rem;
+}
+
+.hero-divider {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, var(--pink-accent), transparent);
+  margin-bottom: 2rem;
+}
+
+.hero-tagline {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  color: var(--pink-deep);
+  margin-bottom: 1.8rem;
+}
+
+.hero-body {
+  font-size: clamp(0.88rem, 1.2vw, 0.97rem);
+  color: var(--ink-mid);
+  max-width: 500px;
+  line-height: 2.2;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 5vh;
+  left: clamp(2rem, 10vw, 9rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.scroll-cue span {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  color: var(--pink-accent);
+  text-transform: uppercase;
+}
+.scroll-bar {
+  width: 48px; height: 0.5px;
+  background: var(--pink-accent);
+}
+
+/* ===== LAYOUT ===== */
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 clamp(2rem, 10vw, 9rem);
+}
+.section {
+  padding: clamp(5rem, 11vh, 9rem) 0;
+}
+
+.section-tag {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+.section-tag span {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.44em;
+  color: var(--pink-deep);
+  text-transform: uppercase;
+}
+.section-tag::after {
+  content: '';
+  flex: 0 0 36px; height: 0.5px;
+  background: var(--pink-accent);
+}
+
+.section-heading {
+  font-family: '游ゴシック', 'Yu Gothic', 'YuGothic', sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 3rem;
+  letter-spacing: 0.08em;
+}
+
+/* ===== MEMBERSHIP ===== */
+.membership-bg {
+  background: linear-gradient(150deg, var(--pink-soft) 0%, var(--ivory) 65%);
+  border-top: 0.5px solid var(--line-pink);
+  border-bottom: 0.5px solid var(--line-pink);
+}
+
+.price-display {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 4rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 0.5px solid var(--line-pink);
+}
+.price-num {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+.price-unit {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.95rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+}
+.price-tax {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  align-self: flex-end;
+}
+
+/* ===== BENEFITS ===== */
+.benefit {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 0.5px solid var(--line-pink);
+  align-items: start;
+}
+.benefit-num {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-size: 2.4rem;
+  color: var(--pink-mist);
+  line-height: 1;
+  padding-top: 0.15rem;
+  text-align: right;
+}
+.benefit-body h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(0.92rem, 1.3vw, 1.02rem);
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.7rem;
+}
+.benefit-body p {
+  font-size: clamp(0.85rem, 1.1vw, 0.92rem);
+  color: var(--ink-mid);
+  line-height: 2.1;
+}
+
+/* ===== ORNAMENT ===== */
+.ornament {
+  text-align: center;
+  padding: 3rem 0;
+}
+.ornament svg { width: 120px; }
+
+/* ===== OPTIONS ===== */
+.options-lead {
+  font-size: clamp(0.88rem, 1.2vw, 0.95rem);
+  color: var(--ink-mid);
+  max-width: 560px;
+  line-height: 2.2;
+  margin-bottom: 3.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.8rem;
+}
+
+.card {
+  background: #fff;
+  border: 0.5px solid var(--line-pink);
+  padding: 2.8rem 2.4rem 2.4rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 12px 44px rgba(226,160,160,0.18), 0 3px 12px rgba(194,106,106,0.08);
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--pink-accent), transparent);
+}
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 40px; height: 40px;
+  border-bottom: 0.5px solid var(--line-pink);
+  border-right: 0.5px solid var(--line-pink);
+  pointer-events: none;
+}
+
+.card-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+.card-price {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 2rem;
+  color: var(--pink-deep);
+  line-height: 1;
+  margin-bottom: 1.6rem;
+}
+.card-price small {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  font-weight: 300;
+}
+.card-desc {
+  font-size: 0.87rem;
+  color: var(--ink-mid);
+  line-height: 2.1;
+  margin-bottom: 1.6rem;
+  font-weight: 300;
+}
+.card-note {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--pink-deep);
+  padding-top: 1.2rem;
+  border-top: 0.5px solid var(--line-pink);
+  line-height: 1.8;
+}
+
+/* ===== NOTES ===== */
+.notes-bg {
+  background: var(--pink-soft);
+  border-top: 0.5px solid var(--line-pink);
+  border-bottom: 0.5px solid var(--line-pink);
+}
+
+.notes-list {
+  list-style: none;
+  max-width: 680px;
+  display: grid;
+  gap: 1.4rem;
+}
+.notes-list li {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  gap: 1rem;
+  font-size: clamp(0.85rem, 1.1vw, 0.93rem);
+  color: var(--ink-mid);
+  line-height: 2;
+}
+.notes-list li::before {
+  content: '—';
+  font-family: 'Cormorant', serif;
+  color: var(--pink-accent);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 5rem clamp(2rem, 10vw, 9rem);
+  text-align: center;
+  border-top: 0.5px solid var(--line-pink);
+}
+.footer-mark {
+  display: inline-block;
+  margin-bottom: 1.4rem;
+}
+.footer-mark svg { width: 32px; opacity: 0.3; }
+.footer-logo {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 1.6rem;
+  color: var(--ink);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.6rem;
+}
+.footer-logo .smile { color: var(--pink-deep); }
+.footer-tagline {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  color: var(--pink-accent);
+}
+
+@media (max-width: 640px) {
+  .cards { grid-template-columns: 1fr; }
+  .benefit { grid-template-columns: 3.5rem 1fr; gap: 1.2rem; }
+  .benefit-num { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="arc arc-1"></div>
+  <div class="arc arc-2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span>Lip:) Smile</span>
+    </div>
+    <h1 class="hero-title">Lip<span class="smile">:)</span>Study<br>Members</h1>
+    <p class="hero-subtitle">サービスのご案内</p>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">「口元から笑顔に。」</p>
+    <p class="hero-body">
+      Lip:)Study Membersは、Lip:)Smileの研修生だけが入れる会員制コミュニティです。<br>
+      「口元から笑顔に」というLip:)Smileの想いに共感し、<br>
+      その輪を世界中に広げていく仲間のための場所です。
+    </p>
+  </div>
+
+  <div class="scroll-cue">
+    <div class="scroll-bar"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<div class="membership-bg">
+  <div class="wrap">
+    <div class="section">
+      <div class="section-tag"><span>Membership</span></div>
+      <h2 class="section-heading">月額会員の特典</h2>
+
+      <div class="price-display">
+        <span class="price-num">1,000</span>
+        <span class="price-unit">円 / 月</span>
+        <span class="price-tax">（税別）</span>
+      </div>
+
+      <div class="benefit">
+        <span class="benefit-num">01</span>
+        <div class="benefit-body">
+          <h3>「Lip:)Study Members」の肩書き</h3>
+          <p>SNS・プロフィールへ記載いただけます。専門家としての雰囲気づくりや信頼感の向上にご使用ください。</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <span class="benefit-num">02</span>
+        <div class="benefit-body">
+          <h3>メンバー限定オープンチャットへの参加</h3>
+          <p>同じ想いを持つメンバー同士が、気軽に情報を交わせ、実践を深め合えるクローズドな空間です。</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <span class="benefit-num">03</span>
+        <div class="benefit-body">
+          <h3>オプションサービスの利用資格</h3>
+          <p>技術チェック・相談コンサル・カルテの3つのプログラムを、必要なタイミングで追加ご利用いただけます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ORNAMENT -->
+<div class="ornament">
+  <svg viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="10" x2="46" y2="10" stroke="#E8A0A0" stroke-width="0.5"/>
+    <circle cx="60" cy="10" r="3" stroke="#E8A0A0" stroke-width="0.5"/>
+    <circle cx="60" cy="10" r="1.2" fill="#E8A0A0" opacity="0.6"/>
+    <line x1="74" y1="10" x2="120" y2="10" stroke="#E8A0A0" stroke-width="0.5"/>
+  </svg>
+</div>
+
+<!-- OPTIONS -->
+<div class="wrap">
+  <div class="section">
+    <div class="section-tag"><span>Options</span></div>
+    <h2 class="section-heading">オプションサービス</h2>
+    <p class="options-lead">
+      実践を深めるためのサポートプログラムをご用意しています。<br>
+      会員登録後、必要なときにお選びいただけます。
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <p class="card-name">技術チェック</p>
+        <p class="card-price">50,000<small> 円（税別）</small></p>
+        <p class="card-desc">オーラルセラピーの技術研修。現在地点と次のステップを丁寧にお伝えします。気になる点や伸ばしたい点も具体的にフィードバックするため、ご自身の技術への理解を深め、今後の成長につなげていただけます。</p>
+        <p class="card-note">→ オーラルセラピーケア（26,400円相当）込み</p>
+      </div>
+      <div class="card">
+        <p class="card-name">相談コンサル</p>
+        <p class="card-price">50,000<small> 円（税別）</small></p>
+        <p class="card-desc">サロン経営・集客・メニュー設計など、現場で感じる悩みや疑問を丁寧にヒアリングしながら、具体的な方向性をご提案します。</p>
+        <p class="card-note">→ 実践に活かせる個別アドバイス</p>
+      </div>
+      <div class="card">
+        <p class="card-name">カルテ</p>
+        <p class="card-price">130,000<small> 円（税別）</small></p>
+        <p class="card-desc">お客様に事前に記入していただけるカルテ。オリジナルイラスト入りで、流れに沿ってそのままお客様へカウンセリングできるように設計されています。オンラインフォームとして使えるシステムの構築費込みで、一度購入すればずっと使い続けられます。</p>
+        <p class="card-note">→ オンラインフォームシステム構築費込み</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NOTES -->
+<div class="notes-bg">
+  <div class="wrap">
+    <div class="section">
+      <div class="section-tag"><span>Notes</span></div>
+      <h2 class="section-heading" style="font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:2rem;">ご利用にあたって</h2>
+      <ul class="notes-list">
+        <li>月額会費はお申し込みの日より発生します。</li>
+        <li>オプションサービスは会員登録後にご購入いただけます。</li>
+        <li>表示金額はすべて税別です。別途消費税がかかります。</li>
+        <li>解約した場合は、解約日当日からすべてのサービスおよび特典のご利用ができなくなります（「Lip:)Study Members」の肩書きは、SNS・プロフィールより削除をお願いいたします）。</li>
+        <li>解約・カード情報の変更：サブスクリプション登録時に送信されるメール内の下部にある「このサブスクリプションの管理が必要ですか？ - 管理」という箇所をクリックすると、キャンセルの手続きや情報の変更が可能です。</li>
+        <li>サービス内容・料金は予告なく変更となる場合があります。</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-mark">
+    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="17" stroke="#E8A0A0" stroke-width="0.5"/>
+      <circle cx="18" cy="18" r="11" stroke="#E8A0A0" stroke-width="0.5"/>
+      <circle cx="18" cy="18" r="2" fill="#E8A0A0"/>
+    </svg>
+  </div>
+  <p class="footer-logo">Lip<span class="smile">:)</span>Study Members</p>
+  <p class="footer-tagline">口元から笑顔に</p>
+</footer>
+
+</body>
+</html>
